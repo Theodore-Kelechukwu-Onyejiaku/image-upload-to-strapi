@@ -24,7 +24,7 @@ export const fetchImages = async () => {
 export const fetchFoods = async () => {
   try {
     // fetch foods from Strapi backend
-    const response = await fetch(`${STRAPI_URL}/api/foods`);
+    const response = await fetch(`${STRAPI_URL}/api/foods?populate=*`);
 
     // if response is not ok
     if (!response.ok) {

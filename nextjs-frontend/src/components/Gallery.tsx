@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Image } from "@/app/Types";
+import { ImageI } from "@/app/Types";
 
 export default function Gallery() {
-  const [images, setImages] = useState<Image[]>([]);
-  const [selectedImage, setSelectedImage] = useState<Image | null>(null);
+  const [images, setImages] = useState<ImageI[]>([]);
+  const [selectedImage, setSelectedImage] = useState<ImageI | null>(null);
   const [update, setUpdate] = useState<boolean>(false);
 
   const handleFetchImages = async () => {};

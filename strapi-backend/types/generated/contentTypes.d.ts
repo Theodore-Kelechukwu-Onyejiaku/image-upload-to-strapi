@@ -6,9 +6,10 @@ export interface ApiFoodFood extends Struct.CollectionTypeSchema {
     singularName: 'food';
     pluralName: 'foods';
     displayName: 'food';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Schema.Attribute.String;

@@ -40,19 +40,19 @@ export async function uploadMultipleOrSingleAction(
   }
 }
 
-export async function LinkToSpecificEntryAction(
-  prevState: any,
-  formData: FormData
-) {
+export async function LinkByUploadAction(prevState: any, formData: FormData) {
   try {
+    // Convert formData into an object to extract data
     const data = Object.fromEntries(formData);
 
+    // Create a new FormData object to send to the server
     const formDataToSend = new FormData();
-    formDataToSend.append("files", data.files);
-    formDataToSend.append("ref", data.ref);
-    formDataToSend.append("refId", data.refId);
-    formDataToSend.append("field", data.field);
+    formDataToSend.append("files", data.files); // The image file
+    formDataToSend.append("ref", data.ref); // The reference type for Food collection
+    formDataToSend.append("refId", data.refId); // The ID of the food entry 
+    formDataToSend.append("field", data.field); // The specific field to which the image is linked, i.e. "cover"
 
+    // Make the API request to Strapi to upload the file and link it to the specific entry
     const response = await fetch(`${STRAPI_URL}/api/upload`, {
       method: "post",
       body: formDataToSend,
@@ -60,6 +60,7 @@ export async function LinkToSpecificEntryAction(
 
     const result = await response.json();
 
+    // Handle potential errors from the API response
     if (result.error) {
       return {
         uploadError: result.error.message,
@@ -67,11 +68,13 @@ export async function LinkToSpecificEntryAction(
       };
     }
 
+    // Return success if the upload and linking is successful
     return {
       uploadSuccess: "Image linked to a food successfully!",
       uploadError: null,
     };
   } catch (error: any) {
+    // Catch any errors that occur during the process
     return {
       uploadError: error.message,
       uploadSuccess: null,

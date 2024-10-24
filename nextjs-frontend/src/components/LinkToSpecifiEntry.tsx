@@ -2,12 +2,16 @@
 
 import { useState } from "react";
 
+import LinkByUpload from "./form/LinkByUpload";
+import LinkByGallery from "./form/LinkByGallery";
+
 enum LinkType {
-  UPLOAD_FILE = "file",
+  UPLOAD = "upload",
   GALLERY = "gallery",
 }
+
 export default function LinkToSpecificEntry() {
-  const [linkType, setLinkType] = useState<string>(LinkType.UPLOAD_FILE);
+  const [linkType, setLinkType] = useState<LinkType>(LinkType.UPLOAD);
 
   return (
     <div>
@@ -20,9 +24,9 @@ export default function LinkToSpecificEntry() {
       <div className="flex justify-between items-center w-full border">
         <button
           type="button"
-          onClick={() => setLinkType(LinkType.UPLOAD_FILE)}
+          onClick={() => setLinkType(LinkType.UPLOAD)}
           className={`${
-            linkType === LinkType.UPLOAD_FILE
+            linkType === LinkType.UPLOAD
               ? "bg-black text-white"
               : "bg-white text-black"
           } py-2 basis-1/2 px-3 transition-all duration-500`}
@@ -41,6 +45,7 @@ export default function LinkToSpecificEntry() {
           Link from Gallery
         </button>
       </div>
+      {linkType === LinkType.UPLOAD ? <LinkByUpload /> : <LinkByGallery />}
     </div>
   );
 }

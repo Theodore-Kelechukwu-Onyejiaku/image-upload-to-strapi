@@ -1,5 +1,6 @@
 export interface Food {
   id: number;
+  documentId: string;
   name: string;
   cover: {
     name: string;
@@ -7,7 +8,7 @@ export interface Food {
   };
 }
 
-export interface Image {
+export interface ImageI {
   id: number;
   documentId: string;
   name: string;
