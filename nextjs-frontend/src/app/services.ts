@@ -54,11 +54,12 @@ export const deleteImage = async (imageId: number) => {
     if (!response.ok) {
       const errorDetails = await response.text();
       throw new Error(
-        `Error fetching Foods: ${response.status} ${response.statusText} - ${errorDetails}`
+        `Error deleting food entry: ${response.status} ${response.statusText} - ${errorDetails}`
       );
     }
   } catch (error: any) {
+    console.log(error);
     // throw new error
-    throw new Error(`Failed to fetch images: ${error.message}`);
+    throw new Error(`Failed to delete entry: ${error.message}`);
   }
 };

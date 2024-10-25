@@ -1,4 +1,4 @@
-export interface Food {
+export interface FoodEntry {
   id: number;
   documentId: string;
   name: string;
@@ -8,7 +8,7 @@ export interface Food {
   };
 }
 
-export interface ImageI {
+export interface ImageEntry {
   id: number;
   documentId: string;
   name: string;

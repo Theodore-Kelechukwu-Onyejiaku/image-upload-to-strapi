@@ -5,7 +5,7 @@ import { fetchFoods, fetchImages } from "@/app/services";
 import { toast } from "react-toastify";
 import SubmitButton from "@/components/SubmitButton";
 import { linkFromGalleryAction } from "@/app/actions";
-import { Food, ImageI } from "@/app/Types";
+import { FoodEntry, ImageEntry } from "@/app/Types";
 
 const STRAPI_URL: string = "http://localhost:1337";
 
@@ -15,8 +15,8 @@ const initialState = {
 };
 export default function LinkByGallery() {
   const [state, formAction] = useFormState(linkFromGalleryAction, initialState);
-  const [foods, setFoods] = useState<Food[]>([]);
-  const [images, setImages] = useState<ImageI[]>([]);
+  const [foods, setFoods] = useState<FoodEntry[]>([]);
+  const [images, setImages] = useState<ImageEntry[]>([]);
   const [selectedImageId, setSelectedImageId] = useState<number | string>("");
 
   const formRef = useRef<HTMLFormElement | null>(null);
