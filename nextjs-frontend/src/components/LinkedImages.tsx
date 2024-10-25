@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { fetchFoods } from "@/app/services";
-import { Food } from "@/app/Types";
+import { FoodEntry } from "@/app/Types";
 
 const STRAPI_URL: string = "http://localhost:1337";
 
 export default function LinkedImages() {
-  const [foods, setFoods] = useState<Food[]>([]);
+  const [foods, setFoods] = useState<FoodEntry[]>([]);
   const getFoods = async () => {
     const result = await fetchFoods();
     setFoods(result?.data);

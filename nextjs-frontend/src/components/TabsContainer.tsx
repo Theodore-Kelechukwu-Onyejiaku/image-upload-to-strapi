@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import MultipleOrSingleUpload from "./MultipleOrSingleUpload";
 import UploadAtEntryCreation from "./UploadAtEntryCreation";
-import LinkToSpecificEntry from "./LinkToSpecifiEntry";
+import LinkToSpecificEntry from "./LinkToSpecificEntry";
 
 import { useState } from "react";
 import LinkedImages from "./LinkedImages";

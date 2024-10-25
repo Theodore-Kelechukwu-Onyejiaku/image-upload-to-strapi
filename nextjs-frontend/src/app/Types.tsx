@@ -1,3 +1,4 @@
+// food entry data types
 export interface FoodEntry {
   id: number;
   documentId: string;
@@ -8,6 +9,7 @@ export interface FoodEntry {
   };
 }
 
+// Image entry data types
 export interface ImageEntry {
   id: number;
   documentId: string;
