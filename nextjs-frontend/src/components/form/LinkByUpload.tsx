@@ -5,7 +5,7 @@ import { LinkByUploadAction } from "@/app/actions";
 
 import SubmitButton from "@/components/SubmitButton";
 import { fetchFoods } from "@/app/services";
-import { Food } from "@/app/Types";
+import { FoodEntry } from "@/app/Types";
 
 const initialState = {
   uploadError: null,
@@ -14,7 +14,7 @@ const initialState = {
 
 export default function LinkByUpload() {
   const [state, formAction] = useFormState(LinkByUploadAction, initialState);
-  const [foods, setFoods] = useState<Food[]>([]);
+  const [foods, setFoods] = useState<FoodEntry[]>([]);
 
   const handleFetchFoods = async () => {
     const result = await fetchFoods();
@@ -38,7 +38,7 @@ export default function LinkByUpload() {
             <select name="refId" className="border p-2 text-[#71717a] text-sm">
               {foods.map((food) => {
                 return (
-                  <option key={food.id} value={food.documentId}>
+                  <option key={food.id} value={food.id}>
                     {" "}
                     {food.name}
                   </option>

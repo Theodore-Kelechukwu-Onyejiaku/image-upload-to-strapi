@@ -17,6 +17,7 @@ export function UpdateImageModal({
   imageSelected,
   handleFetchImages,
 }: UpdateImageModalProps) {
+  
   const initialState = {
     uploadError: null,
     uploadSuccess: null,

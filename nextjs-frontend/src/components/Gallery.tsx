@@ -23,9 +23,9 @@ export default function Gallery() {
     setUpdate(false);
   };
 
-  const onDeleteImage = async (ImageEntryd: number) => {
-    await deleteImage(ImageEntryd);
-    const newImages = [...images].filter((image) => image.id !== ImageEntryd);
+  const onDeleteImage = async (imageId: number) => {
+    await deleteImage(imageId);
+    const newImages = [...images].filter((image) => image.id !== imageId);
     setImages(newImages);
     toast.success("Image Deleted");
   };

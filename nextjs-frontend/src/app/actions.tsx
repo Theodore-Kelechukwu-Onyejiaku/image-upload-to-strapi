@@ -49,7 +49,7 @@ export async function LinkByUploadAction(prevState: any, formData: FormData) {
     const formDataToSend = new FormData();
     formDataToSend.append("files", data.files); // The image file
     formDataToSend.append("ref", data.ref); // The reference type for Food collection
-    formDataToSend.append("refId", data.refId); // The ID of the food entry 
+    formDataToSend.append("refId", data.refId); // The ID of the food entry
     formDataToSend.append("field", data.field); // The specific field to which the image is linked, i.e. "cover"
 
     // Make the API request to Strapi to upload the file and link it to the specific entry
@@ -186,11 +186,11 @@ export async function uploadAtEntryCreationAction(
 export async function updateImageAction(prevState: any, formData: FormData) {
   try {
     const data = Object.fromEntries(formData);
-
     const newImageData = {
-      name: data.name || prevState.image.name,
-      alternativeText: data.alternativeText || prevState.image.alternativeText,
-      caption: data.caption || prevState.image.caption,
+      name: data.name || prevState.imageSelected.name,
+      alternativeText:
+        data.alternativeText || prevState.imageSelected.alternativeText,
+      caption: data.caption || prevState.imageSelected.caption,
     };
     const imageId = data.imageId;
 
