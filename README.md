@@ -16,7 +16,8 @@ In this repo, we used Next.js for image upload to Strapi using REST API.
 - More...
 
 ## Demo
-![Link from Gallery](https://delicate-dawn-ac25646e6d.media.strapiapp.com/Link_from_Gallery_2b46d3f5d5.gif)
+
+![Link from Gallery](https://delicate-dawn-ac25646e6d.media.strapiapp.com/Delete_Image_GIF_9fadec7d81.gif)
 
 ### Link to Tutorial
 
