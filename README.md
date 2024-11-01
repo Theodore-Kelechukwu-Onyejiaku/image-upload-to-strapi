@@ -23,4 +23,6 @@ In this repo, we used Next.js for image upload to Strapi using REST API.
 
 [Image Upload to Strapi via REST API with Next.js and Postman](https://strapi.io/blog/image-upload-to-strapi-via-rest-api-with-nextjs-and-postman)
 
-> Please leave a star ⭐️ if you found it helpful 😊
+
+> 👋 Hi 
+> Please leave a star ⭐️ if you find this tutorial/repo helpful. Thank you! 😊
